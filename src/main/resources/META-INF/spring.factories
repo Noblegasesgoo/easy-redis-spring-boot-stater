@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.noblegasesgoo.platform.config.redis.RedisAutoConfiguration,com.noblegasesgoo.platform.config.redisson.RedissonAutoConfiguration

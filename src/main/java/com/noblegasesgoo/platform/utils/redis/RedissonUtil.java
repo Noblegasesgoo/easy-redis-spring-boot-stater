@@ -4,7 +4,6 @@ import cn.hutool.core.collection.IterUtil;
 import org.redisson.api.*;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.time.Duration;
 import java.util.Collection;
 import java.util.List;
@@ -24,8 +23,11 @@ import java.util.function.Consumer;
 @Component
 public class RedissonUtil {
 
-    @Resource
     private RedissonClient redissonClient;
+
+    public RedissonUtil(RedissonClient redissonClient) {
+        this.redissonClient = redissonClient;
+    }
 
     public long rateLimiter(String key, RateType rateType, int rate, int rateInterval) {
         RRateLimiter rateLimiter = redissonClient.getRateLimiter(key);

@@ -3,6 +3,7 @@ package com.noblegasesgoo.platform.config.redisson;
 import com.noblegasesgoo.platform.properties.redisson.DefaultRedissonProperties;
 import com.noblegasesgoo.platform.service.redisson.IRedissonDistributedLock;
 import com.noblegasesgoo.platform.service.redisson.impl.RedissonDistributedLock;
+import com.noblegasesgoo.platform.utils.redis.RedissonUtil;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.client.codec.Codec;
@@ -89,6 +90,11 @@ public class RedissonAutoConfiguration {
     @Bean
     public IRedissonDistributedLock redissonDistributedLock(RedissonClient redissonClient) {
         return new RedissonDistributedLock(redissonClient);
+    }
+
+    @Bean
+    public RedissonUtil redissonUtil(RedissonClient redissonClient) {
+        return new RedissonUtil(redissonClient);
     }
 
 }

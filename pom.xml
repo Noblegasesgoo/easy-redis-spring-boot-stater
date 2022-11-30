@@ -23,6 +23,12 @@
     <dependencies>
 
         <dependency>
+            <artifactId>hutool-all</artifactId>
+            <groupId>cn.hutool</groupId>
+            <version>5.8.5</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
@@ -64,8 +70,8 @@
 
         <dependency>
             <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.16.4</version>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>3.17.6</version>
         </dependency>
 
     </dependencies>
